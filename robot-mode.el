@@ -1,30 +1,34 @@
 ;;; robot-mode.el --- Support for robot framework files
 
-;; Author: Juuso Valkeejärvi <jvalkeejarvi@gmail.com>
+;; Authors: Juuso Valkeejärvi <jvalkeejarvi@gmail.com>
+;;     Sakari Jokinen <sakariij@gmail.com>
+;; Maintainer: James Estevez <j@jstvz.org>
 ;; Version: 1.0
-;; Keywords: robot
+;; Keywords: languages
+;; URL: https://github.com/jstvz/robot-mode
+
+;; This program is free software; you can redistribute it and/or modify
+;; it under the terms of the GNU General Public License as published by
+;; the Free Software Foundation, either version 3 of the License, or
+;; (at your option) any later version.
+
+;; This program is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+;; GNU General Public License for more details.
+
+;; You should have received a copy of the GNU General Public License
+;; along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+;; Commentary:
 
 ;; Robot mode
-
 ;; ==========
-
-;; A major mode for editing robot framework text files.
-
-;;     This program is free software: you can redistribute it and/or modify
-;;     it under the terms of the GNU General Public License as published by
-;;     the Free Software Foundation, either version 3 of the License, or
-;;     (at your option) any later version.
-
-;;     This program is distributed in the hope that it will be useful,
-;;     but WITHOUT ANY WARRANTY; without even the implied warranty of
-;;     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-;;     GNU General Public License for more details.
-
-;;     You should have received a copy of the GNU General Public License
-;;     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ;;
+;; A major mode for editing robot framework text files.
 ;; You can participate by sending pull requests to https://github.com/jvalkeejarvi/robot-mode
 
+;;; Code:
 (require 's)
 
 (defvar robot-keyword-word-separator " " "Character that is used to distinguish words in keywords, underscore or space should be used")
