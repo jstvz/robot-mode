@@ -63,6 +63,20 @@
           )
         ))
 
+(defun robot-active-style()
+  "Returns the name of the active c-default-style for mode
+  \"other\". If no style is set, \"gnu\" is returned."
+  (cond ((stringp c-default-style) c-default-style)
+        ((listp c-default-style)
+         (cdr (assoc 'other
+                     (append c-default-style '((other . "gnu"))))))
+        (t "gnu")))
+
+(defun robot-offset-from-style()
+  "Gets the c-basic-offset from the active style."
+  (cdr (assoc 'c-basic-offset
+              (cdr (assoc (robot-active-style) c-style-alist)))))
+
 (defun robot-indent()
   "Returns the string used in indation.
 
@@ -346,7 +360,7 @@ robot-basic-offset defines the amount of spaces that are inserted when indenting
   (define-key robot-mode-map [remap complete-symbol] 'robot-mode-complete)
   (define-key robot-mode-map [remap indent-region] 'robot-mode-indent-region)
   )
-   
+
 (add-to-list 'auto-mode-alist '("\\.robot\\'" . robot-mode))
 
 (provide 'robot-mode)
